@@ -1,6 +1,6 @@
 # Smart Job Scheduler
 
-A sophisticated job scheduling application that helps manage interview slots for companies using a greedy algorithm. The application features a modern, premium interface with light and dark theme support.
+A sophisticated job scheduling application that helps manage interview slots for companies using a greedy algorithm. The application features a modern, premium interface.
 
 ## Quick Start
 
@@ -27,7 +27,6 @@ A sophisticated job scheduling application that helps manage interview slots for
     - Scheduled Interviews
     - All Jobs (with status)
 - **Modern Interface**:
-  - Light and dark theme support
   - Premium design with intuitive navigation
   - Responsive layout
 - **Statistics & History**:
