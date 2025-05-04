@@ -12,7 +12,7 @@ A job scheduling application that helps manage interview slots for companies usi
 3. Click "Run Scheduler" to generate the schedule
 4. Export results to Excel if needed
 
-## Features
+## Features1
 
 - Schedule jobs based on profit and deadlines
 - Sort jobs by profit or deadline
