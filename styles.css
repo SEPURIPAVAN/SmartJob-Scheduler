@@ -1,0 +1,120 @@
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c5282;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2b6cb0;
+}
+
+/* Smooth transitions */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background-color: rgba(26, 54, 93, 0.1);
+    transform: translateX(5px);
+}
+
+/* Input focus effects */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(26, 54, 93, 0.2);
+}
+
+/* Button hover effects */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
+}
+
+/* Card hover effects */
+.bg-gray-800:hover {
+    box-shadow: 0 0 20px rgba(26, 54, 93, 0.3);
+}
+
+/* Table styling */
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: #2d3748;
+}
+
+/* Form input animations */
+input {
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    transform: translateY(-1px);
+}
+
+/* Delete button animation */
+button.text-red-500 {
+    transition: all 0.2s ease;
+}
+
+button.text-red-500:hover {
+    transform: scale(1.1);
+}
+
+/* Section headers */
+h2 {
+    position: relative;
+    padding-left: 1rem;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background-color: #1a365d;
+    border-radius: 2px;
+}
+
+/* Table cell animations */
+td {
+    transition: all 0.2s ease;
+}
+
+td:hover {
+    background-color: rgba(26, 54, 93, 0.05);
+}
+
+/* Container animations */
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
