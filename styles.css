@@ -24,11 +24,9 @@
 }
 
 /* Table row hover effect */
-@media (hover: hover) {
-    tbody tr:hover {
-        background-color: rgba(26, 54, 93, 0.1);
-        transform: translateX(5px);
-    }
+tbody tr:hover {
+    background-color: rgba(26, 54, 93, 0.1);
+    transform: translateX(5px);
 }
 
 /* Input focus effects */
@@ -38,40 +36,31 @@ input:focus {
 }
 
 /* Button hover effects */
-@media (hover: hover) {
-    button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
-    }
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 54, 93, 0.3);
 }
 
 /* Card hover effects */
-@media (hover: hover) {
-    .bg-gray-800:hover {
-        box-shadow: 0 0 20px rgba(26, 54, 93, 0.3);
-    }
+.bg-gray-800:hover {
+    box-shadow: 0 0 20px rgba(26, 54, 93, 0.3);
 }
 
 /* Table styling */
 table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 100%;
-    overflow-x: auto;
-    display: block;
 }
 
 th {
     position: sticky;
     top: 0;
     background-color: #2d3748;
-    white-space: nowrap;
 }
 
 /* Form input animations */
 input {
     transition: all 0.3s ease;
-    width: 100%;
 }
 
 input:focus {
@@ -83,17 +72,14 @@ button.text-red-500 {
     transition: all 0.2s ease;
 }
 
-@media (hover: hover) {
-    button.text-red-500:hover {
-        transform: scale(1.1);
-    }
+button.text-red-500:hover {
+    transform: scale(1.1);
 }
 
 /* Section headers */
 h2 {
     position: relative;
     padding-left: 1rem;
-    font-size: 1.25rem;
 }
 
 h2::before {
@@ -111,75 +97,10 @@ h2::before {
 /* Table cell animations */
 td {
     transition: all 0.2s ease;
-    white-space: nowrap;
 }
 
-/* Mobile-specific styles */
-@media (max-width: 640px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    table {
-        font-size: 0.875rem;
-    }
-
-    th, td {
-        padding: 0.5rem;
-    }
-
-    .text-3xl {
-        font-size: 1.5rem;
-    }
-
-    .text-2xl {
-        font-size: 1.25rem;
-    }
-
-    .text-xl {
-        font-size: 1.125rem;
-    }
-}
-
-/* Responsive table container */
-.table-container {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 1rem 0;
-}
-
-/* Responsive form elements */
-.form-group {
-    margin-bottom: 1rem;
-}
-
-@media (min-width: 640px) {
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-}
-
-/* Responsive card padding */
-.card {
-    padding: 1rem;
-}
-
-@media (min-width: 640px) {
-    .card {
-        padding: 1.5rem;
-    }
-}
-
-/* Responsive grid gaps */
-.grid {
-    gap: 1rem;
-}
-
-@media (min-width: 640px) {
-    .grid {
-        gap: 1.5rem;
-    }
+td:hover {
+    background-color: rgba(26, 54, 93, 0.05);
 }
 
 /* Container animations */

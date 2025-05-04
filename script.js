@@ -55,7 +55,7 @@ function addJob(company, profit, deadline, date, description) {
 // Update the job list table
 function updateJobList() {
     if (jobList) {
-        jobList.innerHTML = '';
+    jobList.innerHTML = '';
         
         // Add Clear All button row
         const clearRow = document.createElement('tr');
@@ -72,23 +72,23 @@ function updateJobList() {
         `;
         jobList.appendChild(clearRow);
         
-        jobs.forEach(job => {
-            const row = document.createElement('tr');
-            row.className = 'border-b border-gray-700';
-            row.innerHTML = `
-                <td class="py-3 px-6">${job.company}</td>
-                <td class="py-3 px-6">${job.profit}</td>
-                <td class="py-3 px-6">${job.deadline}</td>
-                <td class="py-3 px-6">${job.date}</td>
-                <td class="py-3 px-6 max-w-xs truncate" title="${job.description}">${job.description}</td>
-                <td class="py-3 px-6">
-                    <button onclick="deleteJob(${job.id})" class="text-red-500 hover:text-red-400">
-                        Delete
-                    </button>
-                </td>
-            `;
-            jobList.appendChild(row);
-        });
+    jobs.forEach(job => {
+        const row = document.createElement('tr');
+        row.className = 'border-b border-gray-700';
+        row.innerHTML = `
+            <td class="py-3 px-6">${job.company}</td>
+            <td class="py-3 px-6">${job.profit}</td>
+            <td class="py-3 px-6">${job.deadline}</td>
+            <td class="py-3 px-6">${job.date}</td>
+            <td class="py-3 px-6 max-w-xs truncate" title="${job.description}">${job.description}</td>
+            <td class="py-3 px-6">
+                <button onclick="deleteJob(${job.id})" class="text-red-500 hover:text-red-400">
+                    Delete
+                </button>
+            </td>
+        `;
+        jobList.appendChild(row);
+    });
     }
 }
 
@@ -98,7 +98,7 @@ function deleteJob(id) {
     if (job) {
         jobs = jobs.filter(j => j.id !== id);
         saveJobs();
-        updateJobList();
+    updateJobList();
         addToHistory('Deleted job', `${job.company}`);
     }
 }
@@ -196,43 +196,43 @@ function scheduleJobs() {
 // Display scheduled interviews
 function displayScheduledInterviews(slots) {
     if (scheduledList) {
-        scheduledList.innerHTML = '';
-        scheduledInterviews.classList.remove('hidden');
-        
-        // First, show all scheduled jobs
-        slots.forEach((job, day) => {
-            if (job) {
-                const row = document.createElement('tr');
-                row.className = 'border-b border-gray-700';
-                row.setAttribute('data-job-id', job.id);
-                row.innerHTML = `
-                    <td class="py-3 px-6">${job.company}</td>
-                    <td class="py-3 px-6">${job.profit}</td>
-                    <td class="py-3 px-6">${job.deadline}</td>
+    scheduledList.innerHTML = '';
+    scheduledInterviews.classList.remove('hidden');
+    
+    // First, show all scheduled jobs
+    slots.forEach((job, day) => {
+        if (job) {
+            const row = document.createElement('tr');
+            row.className = 'border-b border-gray-700';
+            row.setAttribute('data-job-id', job.id);
+            row.innerHTML = `
+                <td class="py-3 px-6">${job.company}</td>
+                <td class="py-3 px-6">${job.profit}</td>
+                <td class="py-3 px-6">${job.deadline}</td>
                     <td class="py-3 px-6">${job.date} (Day ${day})</td>
-                `;
-                scheduledList.appendChild(row);
-            }
-        });
+            `;
+            scheduledList.appendChild(row);
+        }
+    });
 
-        // Then, show unscheduled jobs
-        const scheduledJobIds = new Set(slots.filter(job => job).map(job => job.id));
-        jobs.forEach(job => {
-            if (!scheduledJobIds.has(job.id)) {
-                const row = document.createElement('tr');
-                row.className = 'border-b border-gray-700 text-gray-500';
-                row.setAttribute('data-job-id', job.id);
-                row.innerHTML = `
-                    <td class="py-3 px-6">${job.company}</td>
-                    <td class="py-3 px-6">${job.profit}</td>
-                    <td class="py-3 px-6">${job.deadline}</td>
-                    <td class="py-3 px-6">Not Scheduled</td>
-                `;
-                scheduledList.appendChild(row);
-            }
-        });
-        
-        updateStats();
+    // Then, show unscheduled jobs
+    const scheduledJobIds = new Set(slots.filter(job => job).map(job => job.id));
+    jobs.forEach(job => {
+        if (!scheduledJobIds.has(job.id)) {
+            const row = document.createElement('tr');
+            row.className = 'border-b border-gray-700 text-gray-500';
+            row.setAttribute('data-job-id', job.id);
+            row.innerHTML = `
+                <td class="py-3 px-6">${job.company}</td>
+                <td class="py-3 px-6">${job.profit}</td>
+                <td class="py-3 px-6">${job.deadline}</td>
+                <td class="py-3 px-6">Not Scheduled</td>
+            `;
+            scheduledList.appendChild(row);
+        }
+    });
+    
+    updateStats();
     }
 }
 
@@ -408,30 +408,30 @@ if (sortByProfit) sortByProfit.addEventListener('click', sortJobsByProfit);
 if (sortByDeadline) sortByDeadline.addEventListener('click', sortJobsByDeadline);
 
 if (jobForm) {
-    jobForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const company = document.getElementById('companyName').value;
-        const profit = document.getElementById('profit').value;
-        const deadline = document.getElementById('deadline').value;
-        const date = document.getElementById('date').value;
-        const description = document.getElementById('description').value;
-        
-        addJob(company, profit, deadline, date, description);
+jobForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const company = document.getElementById('companyName').value;
+    const profit = document.getElementById('profit').value;
+    const deadline = document.getElementById('deadline').value;
+    const date = document.getElementById('date').value;
+    const description = document.getElementById('description').value;
+    
+    addJob(company, profit, deadline, date, description);
         
         // Reset form and focus on company name
-        jobForm.reset();
+    jobForm.reset();
         document.getElementById('companyName').focus();
-    });
+});
 }
 
 if (runScheduler) {
-    runScheduler.addEventListener('click', () => {
-        if (jobs.length === 0) {
-            alert('Please add at least one job before running the scheduler.');
-            return;
-        }
-        scheduleJobs();
-    });
+runScheduler.addEventListener('click', () => {
+    if (jobs.length === 0) {
+        alert('Please add at least one job before running the scheduler.');
+        return;
+    }
+    scheduleJobs();
+}); 
 }
 
 // Clear all jobs
